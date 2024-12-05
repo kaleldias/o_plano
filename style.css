@@ -1,0 +1,102 @@
+/* Resetando padding e margin para todos os elementos */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'k2d-bold';
+    src: url(FONTES/K2D-Bold.ttf) format('truetype');  /* Ajuste o caminho da fonte */
+}
+
+@font-face {
+    font-family: 'k2d-regular';
+    src: url(FONTES/K2D-Regular.ttf) format('truetype');  /* Ajuste o caminho da fonte */
+}
+
+@font-face {
+    font-family: 'k2d-semibold';
+    src: url(FONTES/K2D-SemiBold.ttf) format('truetype');  /* Ajuste o caminho da fonte */
+}
+
+body {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo na horizontal */
+    align-items: center;     /* Centraliza o conteúdo na vertical */
+    height: 100vh;           /* Garante que o body tenha a altura completa da tela */
+    background-image: url(IMG/blue-sky-with-clouds-background.jpg);
+    background-size: cover; /* Faz a imagem de fundo cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem de fundo */
+}
+
+.login-box {
+    width: 80%;
+    max-width: 500px;
+    height: 75%;
+    padding: 30px;
+    background-image: linear-gradient(to bottom, #6ba9fb65, #fbfdfe88);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    backdrop-filter: blur(10px);
+}
+
+.icon-enter {
+    width: 15%;
+    height: auto;
+}
+
+.login-box h1 {
+    font-size: 2rem;
+    font-family: 'k2d-bold', sans-serif;
+    margin-bottom: 20px;
+}
+
+.login-box h4 {
+    font-family: 'k2d-regular', sans-serif;
+    color: #737a8c;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-email, .input-password {
+    width: 90%;
+    height: 50px;
+    padding-left: 40px;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #EFF2F6;
+    border: none;
+    font-family: 'k2d-semibold', sans-serif;
+    color: #818998;
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Centraliza verticalmente e alinha horizontalmente */
+}
+
+input::placeholder {
+    font-family: 'k2d-regular', sans-serif; /* Fonte do placeholder */
+    font-size: 16px;  /* Tamanho da fonte */
+    color: #818998;  /* Cor do placeholder */
+}
+
+.input-email {
+    background-image: url('/IMG/email.svg');  /* Caminho da sua imagem */
+}
+
+.button-entrar {
+    border: none;
+    width: 90%;
+    height: 50px;
+    background: #0E0F1A;
+    color: #FFF;
+    font-family: 'k2d-regular';
+    border-radius: 15px;
+    margin-top: 40px;
+    font-size: 18px;
+}
