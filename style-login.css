@@ -319,6 +319,7 @@ form {
     border: none;
     font-family: 'k2d-semibold', sans-serif;
     color: #818998;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 input::placeholder {
@@ -364,6 +365,7 @@ input::placeholder {
     margin-top: 40px;
     font-size: 18px;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .button-entrar:hover {
