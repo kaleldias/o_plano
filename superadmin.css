@@ -1,0 +1,452 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .logo {
+    font-family: Arial, sans-serif;
+  }
+  
+  .admin-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 200px;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    font-size: 22px;
+    color: #555;
+    margin: 20px 0;
+  }
+  
+  .email-section label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  .email-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .email-section .btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .email-section .btn:hover {
+    background-color: #555;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .user-table th,
+  .user-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .user-table th {
+    background-color: #333;
+    color: white;
+  }
+  
+  .user-table td {
+    background-color: #f9f9f9;
+  }
+  
+  .user-table .btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .user-table .btn:hover {
+    background-color: #555;
+  }
+  
+  .user-table .btn-secondary {
+    background-color: #777;
+  }
+  
+  .user-table .btn-secondary:hover {
+    background-color: #555;
+  }
+  
+  .last-modification {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  
+  .modal-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .modal input,
+  .modal select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  .modal input[type="password"] {
+    -webkit-text-security: disc;
+  }
+  
+  .modal-actions button {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-grow: 1;
+    margin: 0 5px;
+  }
+  
+  .modal-actions button:hover {
+    background-color: #555;
+  }
+  
+  .modal-actions .btn-secondary {
+    background-color: #777;
+  }
+  
+  .modal-actions .btn-secondary:hover {
+    background-color: #555;
+  }
+  
+  @media (max-width: 768px) {
+    .admin-container {
+      padding: 15px;
+    }
+  
+    .user-table th,
+    .user-table td {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .email-section input {
+      padding: 8px;
+    }
+  
+    .modal-content {
+      width: 90%;
+      padding: 15px;
+      max-height: 80%;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+  
+    .modal-actions button {
+      padding: 8px 16px;
+    }
+  }
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 10px 40px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 1000;
+    border-radius: 50px;
+    height: 80px;
+    margin-top: 1%;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-left {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex: 1; 
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-family: 'k2d-semibold', sans-serif;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    opacity: 1;
+    transition: opacity 0.3s ease; 
+}
+
+.logo {
+    width: 125px;
+    cursor: pointer;
+}
+
+.separator {
+    height: 30px;
+    width: 1px;
+    background-color: #c0c0c0;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-link {
+    text-decoration: none;
+    font-family: 'k2d-semibold', sans-serif;
+    font-size: 16px;
+    color: #0E0F1A;
+    transition: color 0.3s;
+}
+
+.navbar-link:hover {
+    color: #ffffff;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.escreva-pic {
+    width: 15px;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.escreva-pic:hover{
+    transform: scale(1.1);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger .line {
+    width: 30px;
+    height: 4px;
+    background-color: #000000;
+    border-radius: 5px;
+}
+
+.hamburger:hover .line {
+    transform: scale(1.1); 
+}
+
+.navbar-mobile {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    list-style: none;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none; 
+}
+
+.navbar-mobile.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; 
+}
+
+.navbar-mobile li {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    border-radius: 10px;
+}
+
+.navbar-mobile li:hover{
+    background-color: #333;
+    transform: translateX(10px); 
+    border-radius: 10px;
+}
+
+.navbar-mobile.active li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.navbar-mobile.active li:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.navbar-mobile.active li:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.navbar-mobile.active li:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.navbar-mobile.active li:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.navbar-mobile.active li:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: #000000; 
+    font-family: 'k2d-semibold', sans-serif;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s ease;
+    border-radius: 10px; 
+}
+
+.navbar-link:hover {
+    background-color: #333; 
+    transform: translateX(10px); 
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .navbar-left {
+        display: none; 
+    }
+
+    .navbar-right {
+        display: none; 
+    }
+
+    .hamburger {
+        display: flex; 
+    }
+
+    .navbar-mobile {
+        opacity: 0;
+        pointer-events: none; 
+    }
+
+    .navbar-mobile.active {
+        display: flex;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-left, .navbar-right {
+        display: none;
+    }
+    .navbar-list {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .navbar-list {
+        gap: 10px;
+    }
+}
+  

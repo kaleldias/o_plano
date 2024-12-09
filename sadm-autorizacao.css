@@ -1,0 +1,319 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'K2D', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+.main-header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.header-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-area .logo {
+    height: 40px;
+    cursor: pointer;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.main-nav a:hover {
+    background: #e0e0e0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.action-link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.action-link:hover {
+    background: #e0e0e0;
+}
+
+.admin-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.admin-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: left;
+    color: #333;
+}
+
+.add-email-section h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.add-email-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.input-email {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.btn-add-email {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-add-email:hover {
+    background: #555;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 8px;
+    -webkit-overflow-scrolling: touch; /* Suaviza o scroll em dispositivos móveis */
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.users-table th,
+.users-table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.users-table th {
+    background: #333;
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+}
+
+.users-table tr:hover td {
+    background: #f9f9f9;
+}
+
+.btn-ver {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-ver:hover {
+    background: #555;
+}
+
+.detail-who{
+    color: #666;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+
+/* Dialog */
+dialog {
+    border: none;
+    border-radius: 16px;
+    margin: 80px auto;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.dialog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dialog-form h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.dialog-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.btn-salvar,
+.btn-remover,
+.btn-fechar {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-salvar {
+    background: #333;
+    color: #fff;
+}
+
+.btn-salvar:hover {
+    background: #555;
+}
+
+.btn-remover {
+    background: #c00;
+    color: #fff;
+}
+
+.btn-remover:hover {
+    background: #a00;
+}
+
+.btn-fechar {
+    background: #ddd;
+    color: #333;
+}
+
+.btn-fechar:hover {
+    background: #bbb;
+}
+
+/* Footer */
+.main-footer {
+    background: #fff;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    
+
+    .header-content {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .add-email-form {
+        flex-direction: column;
+    }
+
+    .dialog-form {
+        width: 100%;
+    }
+
+    dialog {
+        width: 90%;
+    }
+
+}
