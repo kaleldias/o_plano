@@ -1,0 +1,163 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, Arial, Helvetica;
+}
+
+body {
+    background: linear-gradient(to bottom, #e5ecf9, #cfe0f5);
+    color: #333;
+    line-height: 1.5;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+a:hover {
+    color: #0a2540;
+    text-decoration: underline;
+}
+
+/* HEADER */
+.main-header {
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+.header-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-img {
+    height: 40px;
+}
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.main-nav a {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #333;
+}
+.main-nav a.active,
+.main-nav a:hover {
+    background: #e0e0e0;
+    color: #000;
+}
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+.header-button {
+    padding: 5px 10px;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+}
+.header-button.active {
+    background: #0a2540;
+}
+.header-button:hover {
+    background: #555;
+}
+
+/* FOOTER */
+.main-footer {
+    background: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+}
+.main-footer p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* ADMIN CONTENT AREA */
+.admin-bg {
+    background: linear-gradient(to bottom, #e5ecf9, #cfe0f5);
+}
+.admin-main-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #ffffffaa;
+    padding: 40px;
+    border-radius: 10px;
+}
+.admin-section h1 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
+
+/* FORM */
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.form-group label {
+    font-weight: bold;
+}
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-group input:focus {
+    outline: 2px solid #0a2540;
+}
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+.btn-submit {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.btn-submit:hover {
+    background: #222;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .form-group input,
+    .btn-submit {
+        width: 100%;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>O Plano - Meu Perfil (Super Admin)</title>
+    <link rel="stylesheet" href="css/spadm-perfil.css"/>
+</head>
+<body class="admin-bg">
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html"><img src="imagens/logo.png" alt="O Plano" class="logo-img"/></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="todas_noticias.html">Notícias</a></li>
+                    <li><a href="superadmin_todos_posts.html">Todos Posts</a></li>
+                    <li><a href="superadmin_usuarios.html">Usuários</a></li>
+                    <li><a href="superadmin_autorizacao.html">Autorização</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="superadmin_perfil.html" class="header-button active">Meu Perfil</a>
+                <a href="logout.html" class="header-button">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-main-content">
+        <section class="admin-section">
+            <h1>Meu Perfil (Super Admin)</h1>
+            <form class="admin-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" value="Super Administrador" required />
+                </div>
+                
+                <div class="form-group">
+                    <label for="senha_atual">Senha Atual</label>
+                    <input type="password" id="senha_atual" name="senha_atual" placeholder="Digite sua senha atual" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="nova_senha">Nova Senha</label>
+                    <input type="password" id="nova_senha" name="nova_senha" placeholder="Digite a nova senha" />
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Atualizar Perfil</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 O Plano - Área Super Administrativa</p>
+    </footer>
+</body>
+</html>
