@@ -1,153 +1,207 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Importando fontes do Google Fonts (mesmas do login e home) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
-    
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- CSS específico para esta página -->
-    <link rel="stylesheet" href="css/noticias.css">
+    <link rel="stylesheet" href="noticias.css" />
 
     <title>O PLANO - Todas as Notícias</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar (mesmo padrão das outras páginas) -->
     <nav class="navbar">
-        <div class="navbar-content">
-            <div class="navbar-logo">
-                <img src="img/logo.png" alt="Logo" class="logo">
-                <span class="separator"></span>
-            </div>
-
-            <div class="navbar-left">
-                <ul class="navbar-list">
-                    <li><a href="index.html" class="navbar-link">Home</a></li>
-                    <li><a href="todas_noticias.html" class="navbar-link active">Notícias</a></li>
-                </ul>
-            </div>
-
-            <div class="navbar-right">
-                
-                <a href="login.html" class="navbar-link">Login</a>
-                <a href="cadastrar.html" class="navbar-link">Cadastre-se</a>
-                
-            </div>
+      <div class="navbar-content">
+        <div class="navbar-logo">
+          <img src="img/logo.png" alt="Logo" class="logo" />
+          <span class="separator"></span>
         </div>
 
-        <div class="hamburger" id="hamburger-menu">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
+        <div class="navbar-left">
+          <ul class="navbar-list">
+            <li><a href="index.html" class="navbar-link">Home</a></li>
+            <li>
+              <a href="todas_noticias.html" class="navbar-link active"
+                >Notícias</a
+              >
+            </li>
+          </ul>
         </div>
-        <ul class="navbar-mobile" id="navbar-mobile">
-            <li><a href="index-home.html" class="navbar-link">Home</a></li>
-            <li><a href="index-register.html" class="navbar-link">Registro</a></li>
-            <li><a href="todas_noticias.html" class="navbar-link">Notícias</a></li>
-            <li><a href="#" class="navbar-link">Escreva</a></li>
-            <li><a href="#" class="navbar-link">Perfil</a></li>
-        </ul>
+
+        <div class="navbar-right">
+          <a href="login.html" class="navbar-link">Login</a>
+          <a href="cadastrar.html" class="navbar-link">Cadastre-se</a>
+        </div>
+      </div>
+
+      <div class="hamburger" id="hamburger-menu">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+      <ul class="navbar-mobile" id="navbar-mobile">
+        <li><a href="index-home.html" class="navbar-link">Home</a></li>
+        <li><a href="index-register.html" class="navbar-link">Registro</a></li>
+        <li><a href="todas_noticias.html" class="navbar-link">Notícias</a></li>
+        <li><a href="#" class="navbar-link">Escreva</a></li>
+        <li><a href="#" class="navbar-link">Perfil</a></li>
+      </ul>
     </nav>
 
     <!-- Conteúdo Principal -->
     <main class="main-content">
-        <section class="page-header">
-            <h1 class="page-title">Todas as Notícias</h1>
-            <p class="page-subtitle">Confira a lista completa de notícias, artigos e análises disponíveis no O Plano.</p>
-        </section>
+      <section class="page-header">
+        <h1 class="page-title">Todas as Notícias</h1>
+        <p class="page-subtitle">
+          Confira a lista completa de notícias, artigos e análises disponíveis
+          no O Plano.
+        </p>
+      </section>
 
-        <!-- Container da Lista de Notícias -->
-        <section class="news-list-container">
-            <!-- Opção: Barra de busca / filtros (opcional) -->
-            <!-- 
+      <!-- Container da Lista de Notícias -->
+      <section class="news-list-container">
+        <!-- Opção: Barra de busca / filtros (opcional) -->
+        <!-- 
             <div class="filter-bar">
                 <input type="text" class="search-input" placeholder="Pesquisar notícias...">
                 <button class="search-btn">Pesquisar</button>
             </div>
             -->
 
-            <div class="news-grid">
-                <!-- Cartão de Notícia -->
-                <article class="news-item">
-                    <img src="img/lula-bebo.webp" alt="Notícia 1" class="news-item-img">
-                    <div class="news-item-content">
-                        <h2 class="news-item-title">Título da Notícia 1</h2>
-                        <p class="news-item-excerpt">Uma breve descrição desta notícia, convidando o leitor a saber mais...</p>
-                        <a href="#" class="news-item-link">Leia mais →</a>
-                    </div>
-                </article>
-
-                <article class="news-item">
-                    <img src="img/trump-noticia.avif" alt="Notícia 2" class="news-item-img">
-                    <div class="news-item-content">
-                        <h2 class="news-item-title">Título da Notícia 2</h2>
-                        <p class="news-item-excerpt">Um pequeno resumo para contextualizar o usuário sobre o assunto da matéria...</p>
-                        <a href="#" class="news-item-link">Leia mais →</a>
-                    </div>
-                </article>
-
-                <article class="news-item">
-                    <img src="img/bitcoin-noticia.webp" alt="Notícia 3" class="news-item-img">
-                    <div class="news-item-content">
-                        <h2 class="news-item-title">Título da Notícia 3</h2>
-                        <p class="news-item-excerpt">Mais um texto curto sobre essa notícia específica, despertando a curiosidade do leitor.</p>
-                        <a href="#" class="news-item-link">Leia mais →</a>
-                    </div>
-                </article>
-
-                <article class="news-item">
-                    <img src="img/elon-musk-capa.jpg" alt="Notícia 4" class="news-item-img">
-                    <div class="news-item-content">
-                        <h2 class="news-item-title">Título da Notícia 4</h2>
-                        <p class="news-item-excerpt">Descrição simples e atrativa para informar o leitor sobre o conteúdo desta notícia.</p>
-                        <a href="#" class="news-item-link">Leia mais →</a>
-                    </div>
-                </article>
-
-                <article class="news-item">
-                    <img src="img/siria-noticia.jpg" alt="Notícia 5" class="news-item-img">
-                    <div class="news-item-content">
-                        <h2 class="news-item-title">Título da Notícia 5</h2>
-                        <p class="news-item-excerpt">Mais um breve resumo, despertando interesse para saber mais detalhes.</p>
-                        <a href="#" class="news-item-link">Leia mais →</a>
-                    </div>
-                </article>
-
-                <article class="news-item">
-                    <img src="img/mito.jpg" alt="Notícia 6" class="news-item-img">
-                    <div class="news-item-content">
-                        <h2 class="news-item-title">Título da Notícia 6</h2>
-                        <p class="news-item-excerpt">Pequeno texto que introduz o tema ao leitor de forma rápida e objetiva.</p>
-                        <a href="#" class="news-item-link">Leia mais →</a>
-                    </div>
-                </article>
-
-                <article class="news-item">
-                    <img src="img/tesla.jpg" alt="Notícia 6" class="news-item-img">
-                    <div class="news-item-content">
-                        <h2 class="news-item-title">Título da Notícia 6</h2>
-                        <p class="news-item-excerpt">Pequeno texto que introduz o tema ao leitor de forma rápida e objetiva.</p>
-                        <a href="#" class="news-item-link">Leia mais →</a>
-                    </div>
-                </article>
-
-                <article class="news-item">
-                    <img src="img/lula-filho-da-puta.jpeg" alt="Notícia 6" class="news-item-img">
-                    <div class="news-item-content">
-                        <h2 class="news-item-title">Título da Notícia 6</h2>
-                        <p class="news-item-excerpt">Pequeno texto que introduz o tema ao leitor de forma rápida e objetiva.</p>
-                        <a href="#" class="news-item-link">Leia mais →</a>
-                    </div>
-                </article>
+        <div class="news-grid">
+          <!-- Cartão de Notícia -->
+          <article class="news-item">
+            <img
+              src="img/lula-bebo.webp"
+              alt="Notícia 1"
+              class="news-item-img"
+            />
+            <div class="news-item-content">
+              <h2 class="news-item-title">Título da Notícia 1</h2>
+              <p class="news-item-excerpt">
+                Uma breve descrição desta notícia, convidando o leitor a saber
+                mais...
+              </p>
+              <a href="#" class="news-item-link">Leia mais →</a>
             </div>
+          </article>
 
-            <!-- Paginação / Botão de "Carregar mais" -->
-            <div class="pagination-container">
-                <!-- Exemplo de paginação simples:
+          <article class="news-item">
+            <img
+              src="img/trump-noticia.avif"
+              alt="Notícia 2"
+              class="news-item-img"
+            />
+            <div class="news-item-content">
+              <h2 class="news-item-title">Título da Notícia 2</h2>
+              <p class="news-item-excerpt">
+                Um pequeno resumo para contextualizar o usuário sobre o assunto
+                da matéria...
+              </p>
+              <a href="#" class="news-item-link">Leia mais →</a>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img
+              src="img/bitcoin-noticia.webp"
+              alt="Notícia 3"
+              class="news-item-img"
+            />
+            <div class="news-item-content">
+              <h2 class="news-item-title">Título da Notícia 3</h2>
+              <p class="news-item-excerpt">
+                Mais um texto curto sobre essa notícia específica, despertando a
+                curiosidade do leitor.
+              </p>
+              <a href="#" class="news-item-link">Leia mais →</a>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img
+              src="img/elon-musk-capa.jpg"
+              alt="Notícia 4"
+              class="news-item-img"
+            />
+            <div class="news-item-content">
+              <h2 class="news-item-title">Título da Notícia 4</h2>
+              <p class="news-item-excerpt">
+                Descrição simples e atrativa para informar o leitor sobre o
+                conteúdo desta notícia.
+              </p>
+              <a href="#" class="news-item-link">Leia mais →</a>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img
+              src="img/siria-noticia.jpg"
+              alt="Notícia 5"
+              class="news-item-img"
+            />
+            <div class="news-item-content">
+              <h2 class="news-item-title">Título da Notícia 5</h2>
+              <p class="news-item-excerpt">
+                Mais um breve resumo, despertando interesse para saber mais
+                detalhes.
+              </p>
+              <a href="#" class="news-item-link">Leia mais →</a>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img src="img/mito.jpg" alt="Notícia 6" class="news-item-img" />
+            <div class="news-item-content">
+              <h2 class="news-item-title">Título da Notícia 6</h2>
+              <p class="news-item-excerpt">
+                Pequeno texto que introduz o tema ao leitor de forma rápida e
+                objetiva.
+              </p>
+              <a href="#" class="news-item-link">Leia mais →</a>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img src="img/tesla.jpg" alt="Notícia 6" class="news-item-img" />
+            <div class="news-item-content">
+              <h2 class="news-item-title">Título da Notícia 6</h2>
+              <p class="news-item-excerpt">
+                Pequeno texto que introduz o tema ao leitor de forma rápida e
+                objetiva.
+              </p>
+              <a href="#" class="news-item-link">Leia mais →</a>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img
+              src="img/lula-filho-da-puta.jpeg"
+              alt="Notícia 6"
+              class="news-item-img"
+            />
+            <div class="news-item-content">
+              <h2 class="news-item-title">Título da Notícia 6</h2>
+              <p class="news-item-excerpt">
+                Pequeno texto que introduz o tema ao leitor de forma rápida e
+                objetiva.
+              </p>
+              <a href="#" class="news-item-link">Leia mais →</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Paginação / Botão de "Carregar mais" -->
+        <div class="pagination-container">
+          <!-- Exemplo de paginação simples:
                 <a href="#" class="pagination-link">Anterior</a>
                 <span class="current-page">1</span>
                 <a href="#" class="pagination-link">2</a>
@@ -155,72 +209,75 @@
                 <a href="#" class="pagination-link">Próximo</a>
                 -->
 
-                <!-- Ou um botão de Carregar Mais -->
-                <button class="load-more-btn">Carregar mais</button>
-            </div>
-        </section>
+          <!-- Ou um botão de Carregar Mais -->
+          <button class="load-more-btn">Carregar mais</button>
+        </div>
+      </section>
     </main>
 
     <!-- Rodapé (mesmo padrão da home) -->
     <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <img src="img/logo.png" alt="O Plano" class="footer-logo">
-                <p class="footer-description">O seu portal de notícias independente, trazendo informação, cultura e conhecimento.</p>
-            </div>
-
-            <div class="footer-section">
-                <h3 class="footer-title">Links Úteis</h3>
-                <ul class="footer-links">
-                    <li><a href="index-home.html">Home</a></li>
-                    <li><a href="index-register.html">Registro</a></li>
-                    <li><a href="todas_noticias.html">Notícias</a></li>
-                    <li><a href="#">Escreva</a></li>
-                    <li><a href="#">Perfil</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3 class="footer-title">Siga-nos</h3>
-                <ul class="social-links">
-                    <li><a href="#" class="social-link">Instagram</a></li>
-                    <li><a href="#" class="social-link">Twitter</a></li>
-                    <li><a href="#" class="social-link">Facebook</a></li>
-                    <li><a href="#" class="social-link">LinkedIn</a></li>
-                </ul>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="img/logo.png" alt="O Plano" class="footer-logo" />
+          <p class="footer-description">
+            O seu portal de notícias independente, trazendo informação, cultura
+            e conhecimento.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 O PLANO - Todos os direitos reservados.</p>
+
+        <div class="footer-section">
+          <h3 class="footer-title">Links Úteis</h3>
+          <ul class="footer-links">
+            <li><a href="index-home.html">Home</a></li>
+            <li><a href="index-register.html">Registro</a></li>
+            <li><a href="todas_noticias.html">Notícias</a></li>
+            <li><a href="#">Escreva</a></li>
+            <li><a href="#">Perfil</a></li>
+          </ul>
         </div>
+
+        <div class="footer-section">
+          <h3 class="footer-title">Siga-nos</h3>
+          <ul class="social-links">
+            <li><a href="#" class="social-link">Instagram</a></li>
+            <li><a href="#" class="social-link">Twitter</a></li>
+            <li><a href="#" class="social-link">Facebook</a></li>
+            <li><a href="#" class="social-link">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 O PLANO - Todos os direitos reservados.</p>
+      </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburgerMenu = document.getElementById('hamburger-menu');
-            const navbarMobile = document.getElementById('navbar-mobile');
-            const mobileLinks = navbarMobile.querySelectorAll('.navbar-link');
+      document.addEventListener('DOMContentLoaded', () => {
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const navbarMobile = document.getElementById('navbar-mobile');
+        const mobileLinks = navbarMobile.querySelectorAll('.navbar-link');
 
-            hamburgerMenu.addEventListener('click', () => {
-                navbarMobile.classList.toggle('active');
-                const items = navbarMobile.querySelectorAll('li');
-                items.forEach((item, index) => {
-                    item.style.transitionDelay = `${index * 0.1}s`;
-                });
-            });
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navbarMobile.classList.remove('active');
-                });
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    navbarMobile.classList.remove('active');
-                }
-            });
+        hamburgerMenu.addEventListener('click', () => {
+          navbarMobile.classList.toggle('active');
+          const items = navbarMobile.querySelectorAll('li');
+          items.forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.1}s`;
+          });
         });
+
+        mobileLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            navbarMobile.classList.remove('active');
+          });
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 768) {
+            navbarMobile.classList.remove('active');
+          }
+        });
+      });
     </script>
-</body>
+  </body>
 </html>

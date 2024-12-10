@@ -1,166 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Importando fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=K2D:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=K2D:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <!-- CSS da página -->
-    <link rel="stylesheet" href="css/superadmin.css"/>
+    <link rel="stylesheet" href="superadmin.css" />
     <title>O PLANO - Autorização de Cadastro (Super Admin)</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar (mesmo estilo das outras páginas) -->
     <nav class="navbar">
-        <div class="navbar-content">
-            <div class="navbar-logo">
-                <img src="img/logo.png" alt="Logo" class="logo">
-                <span class="separator"></span>
-            </div>
-
-            <div class="navbar-left">
-                <ul class="navbar-list">
-                    <li><a href="index-home.html" class="navbar-link">Home</a></li>
-                    <li><a href="todas_noticias.html" class="navbar-link">Notícias</a></li>
-                    <li><a href="superadmin_todos_posts.html" class="navbar-link">Todos Posts</a></li>
-                    <li><a href="superadmin_usuarios.html" class="navbar-link">Usuários</a></li>
-                    <li><a href="superadmin_autorizacao.html" class="navbar-link active">Autorização</a></li>
-                </ul>
-            </div>
-
-            <div class="navbar-right">
-                <img src="IMG/icon-write.svg" alt="Escreva" class="escreva-pic">
-                <a href="superadmin_perfil.html" class="navbar-link">Meu Perfil</a>
-                <img src="IMG/tokinho.svg" alt="Perfil" class="profile-pic">
-            </div>
+      <div class="navbar-content">
+        <div class="navbar-logo">
+          <img src="img/logo.png" alt="Logo" class="logo" />
+          <span class="separator"></span>
         </div>
 
-        <div class="hamburger" id="hamburger-menu">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </div>
-        <ul class="navbar-mobile" id="navbar-mobile">
+        <div class="navbar-left">
+          <ul class="navbar-list">
             <li><a href="index-home.html" class="navbar-link">Home</a></li>
-            <li><a href="todas_noticias.html" class="navbar-link">Notícias</a></li>
-            <li><a href="superadmin_todos_posts.html" class="navbar-link">Todos Posts</a></li>
-            <li><a href="superadmin_usuarios.html" class="navbar-link">Usuários</a></li>
-            <li><a href="superadmin_autorizacao.html" class="navbar-link">Autorização</a></li>
-            <li><a href="superadmin_perfil.html" class="navbar-link">Meu Perfil</a></li>
-        </ul>
+            <li>
+              <a href="todas_noticias.html" class="navbar-link">Notícias</a>
+            </li>
+            <li>
+              <a href="superadmin_todos_posts.html" class="navbar-link"
+                >Todos Posts</a
+              >
+            </li>
+            <li>
+              <a href="superadmin_usuarios.html" class="navbar-link"
+                >Usuários</a
+              >
+            </li>
+            <li>
+              <a href="superadmin_autorizacao.html" class="navbar-link active"
+                >Autorização</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="navbar-right">
+          <img src="IMG/icon-write.svg" alt="Escreva" class="escreva-pic" />
+          <a href="superadmin_perfil.html" class="navbar-link">Meu Perfil</a>
+          <img src="IMG/tokinho.svg" alt="Perfil" class="profile-pic" />
+        </div>
+      </div>
+
+      <div class="hamburger" id="hamburger-menu">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+      <ul class="navbar-mobile" id="navbar-mobile">
+        <li><a href="index-home.html" class="navbar-link">Home</a></li>
+        <li><a href="todas_noticias.html" class="navbar-link">Notícias</a></li>
+        <li>
+          <a href="superadmin_todos_posts.html" class="navbar-link"
+            >Todos Posts</a
+          >
+        </li>
+        <li>
+          <a href="superadmin_usuarios.html" class="navbar-link">Usuários</a>
+        </li>
+        <li>
+          <a href="superadmin_autorizacao.html" class="navbar-link"
+            >Autorização</a
+          >
+        </li>
+        <li>
+          <a href="superadmin_perfil.html" class="navbar-link">Meu Perfil</a>
+        </li>
+      </ul>
     </nav>
 
     <!-- Conteúdo principal -->
     <main class="main-content">
-        <section class="page-header">
-            <h1 class="page-title">Autorização de Cadastros Pendentes</h1>
-            <p class="page-subtitle">Gerencie as solicitações de novos administradores aguardando aprovação.</p>
-        </section>
+      <section class="page-header">
+        <h1 class="page-title">Autorização de Cadastros Pendentes</h1>
+        <p class="page-subtitle">
+          Gerencie as solicitações de novos administradores aguardando
+          aprovação.
+        </p>
+      </section>
 
-        <!-- Tabela de Autorizações -->
-        <section class="authorization-table-section">
-            <table class="authorization-table">
-                <thead>
-                    <tr>
-                        <th>Email</th>
-                        <th>Status</th>
-                        <th>Data Criação</th>
-                        <th>Última Atualização</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Exemplo de linha pendente -->
-                    <tr>
-                        <td>novo_admin@exemplo.com</td>
-                        <td>Pendente</td>
-                        <td>Por: Super Admin <br> 05/12/2024 21:35</td>
-                        <td>Não Atualizado</td>
-                        <td>
-                            <button class="btn-approve">Aprovar</button>
-                            <button class="btn-deny">Negar</button>
-                        </td>
-                    </tr>
+      <!-- Tabela de Autorizações -->
+      <section class="authorization-table-section">
+        <table class="authorization-table">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Data Criação</th>
+              <th>Última Atualização</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Exemplo de linha pendente -->
+            <tr>
+              <td>novo_admin@exemplo.com</td>
+              <td>Pendente</td>
+              <td>
+                Por: Super Admin <br />
+                05/12/2024 21:35
+              </td>
+              <td>Não Atualizado</td>
+              <td>
+                <button class="btn-approve">Aprovar</button>
+                <button class="btn-deny">Negar</button>
+              </td>
+            </tr>
 
-                    <tr>
-                        <td>jovem_mod@exemplo.com</td>
-                        <td>Pendente</td>
-                        <td>Por: Super Admin <br> 07/12/2024 08:00</td>
-                        <td>Não Atualizado</td>
-                        <td>
-                            <button class="btn-approve">Aprovar</button>
-                            <button class="btn-deny">Negar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+            <tr>
+              <td>jovem_mod@exemplo.com</td>
+              <td>Pendente</td>
+              <td>
+                Por: Super Admin <br />
+                07/12/2024 08:00
+              </td>
+              <td>Não Atualizado</td>
+              <td>
+                <button class="btn-approve">Aprovar</button>
+                <button class="btn-deny">Negar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
 
     <!-- Rodapé (mesmo padrão das outras telas) -->
     <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <img src="img/logo.png" alt="O Plano" class="footer-logo">
-                <p class="footer-description">O seu portal de notícias independente, trazendo informação, cultura e conhecimento.</p>
-            </div>
-
-            <div class="footer-section">
-                <h3 class="footer-title">Links Úteis</h3>
-                <ul class="footer-links">
-                    <li><a href="index-home.html">Home</a></li>
-                    <li><a href="todas_noticias.html">Notícias</a></li>
-                    <li><a href="superadmin_todos_posts.html">Todos Posts</a></li>
-                    <li><a href="superadmin_usuarios.html">Usuários</a></li>
-                    <li><a href="superadmin_autorizacao.html">Autorização</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3 class="footer-title">Siga-nos</h3>
-                <ul class="social-links">
-                    <li><a href="#" class="social-link">Instagram</a></li>
-                    <li><a href="#" class="social-link">Twitter</a></li>
-                    <li><a href="#" class="social-link">Facebook</a></li>
-                    <li><a href="#" class="social-link">LinkedIn</a></li>
-                </ul>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="img/logo.png" alt="O Plano" class="footer-logo" />
+          <p class="footer-description">
+            O seu portal de notícias independente, trazendo informação, cultura
+            e conhecimento.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 O PLANO - Todos os direitos reservados.</p>
+
+        <div class="footer-section">
+          <h3 class="footer-title">Links Úteis</h3>
+          <ul class="footer-links">
+            <li><a href="index-home.html">Home</a></li>
+            <li><a href="todas_noticias.html">Notícias</a></li>
+            <li><a href="superadmin_todos_posts.html">Todos Posts</a></li>
+            <li><a href="superadmin_usuarios.html">Usuários</a></li>
+            <li><a href="superadmin_autorizacao.html">Autorização</a></li>
+          </ul>
         </div>
+
+        <div class="footer-section">
+          <h3 class="footer-title">Siga-nos</h3>
+          <ul class="social-links">
+            <li><a href="#" class="social-link">Instagram</a></li>
+            <li><a href="#" class="social-link">Twitter</a></li>
+            <li><a href="#" class="social-link">Facebook</a></li>
+            <li><a href="#" class="social-link">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 O PLANO - Todos os direitos reservados.</p>
+      </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburgerMenu = document.getElementById('hamburger-menu');
-            const navbarMobile = document.getElementById('navbar-mobile');
-            const mobileLinks = navbarMobile.querySelectorAll('.navbar-link');
+      document.addEventListener('DOMContentLoaded', () => {
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const navbarMobile = document.getElementById('navbar-mobile');
+        const mobileLinks = navbarMobile.querySelectorAll('.navbar-link');
 
-            hamburgerMenu.addEventListener('click', () => {
-                navbarMobile.classList.toggle('active');
-                const items = navbarMobile.querySelectorAll('li');
-                items.forEach((item, index) => {
-                    item.style.transitionDelay = `${index * 0.1}s`;
-                });
-            });
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navbarMobile.classList.remove('active');
-                });
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    navbarMobile.classList.remove('active');
-                }
-            });
+        hamburgerMenu.addEventListener('click', () => {
+          navbarMobile.classList.toggle('active');
+          const items = navbarMobile.querySelectorAll('li');
+          items.forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.1}s`;
+          });
         });
+
+        mobileLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            navbarMobile.classList.remove('active');
+          });
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 768) {
+            navbarMobile.classList.remove('active');
+          }
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
