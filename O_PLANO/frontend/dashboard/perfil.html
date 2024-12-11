@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O PLANO - Editar Perfil (Admin)</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonte: Barlow e K2D -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=K2D:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/perfil.css" />
+    <link rel="stylesheet" href="../components/navbar/navbar.css" />
+    <script type="module" src="../js/app.js"></script>
+
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="loader"></div>
+
+
+    <div id="navbar-container"></div>
+
+    <main class="admin-container">
+        <section class="admin-card">
+            <h1 class="card-title">Meu Perfil</h1>
+            <form id="perfil-form" class="admin-form">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Seu email" required />
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Salvar</button>
+                    <button type="button" class="btn-update-password">Atualizar Senha</button>
+                </div>
+            </form>
+
+            <div id="feedback" class="feedback" style="display:none;"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 O Plano - Área Administrativa</p>
+    </footer>
+
+    <!-- Dialog de Atualizar Senha -->
+    <dialog id="dialog-atualizar-senha">
+        <form method="dialog" class="dialog-form">
+            <h2>Atualizar Senha</h2>
+            <div class="form-group">
+                <label for="senha_atual">Senha Atual</label>
+                <input type="password" id="senha_atual_dialog" name="senha_atual_dialog"
+                    placeholder="Digite sua senha atual" required />
+            </div>
+
+            <div class="form-group">
+                <label for="nova_senha">Nova Senha</label>
+                <input type="password" id="nova_senha_dialog" name="nova_senha_dialog" placeholder="Digite a nova senha"
+                    required />
+            </div>
+
+            <div class="dialog-actions">
+                <button type="button" class="btn-cancelar">Cancelar</button>
+                <button type="button" class="btn-confirmar">Confirmar</button>
+            </div>
+
+            <div id="dialogFeedback" class="feedback" style="display:none;"></div>
+        </form>
+    </dialog>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('perfil-form');
+            const feedback = document.getElementById('feedback');
+
+            // Simular carregamento de dados do usuário do sessionStorage ou fetch API
+            const userData = JSON.parse(sessionStorage.getItem('user')) || { nome: "Admin", email: "admin@example.com" };
+            document.getElementById('nome').value = userData.nome;
+            document.getElementById('email').value = userData.email;
+
+            // Ao enviar o formulário principal (atualiza nome e email)
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                feedback.style.display = 'block';
+                feedback.className = 'feedback success';
+                feedback.textContent = 'Atualizando...';
+
+                const nome = document.getElementById('nome').value.trim();
+                const email = document.getElementById('email').value.trim();
+
+                const payload = { nome, email };
+
+                try {
+                    const res = await fetch('http://127.0.0.1:3000/api/admin', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer SEU_TOKEN_AQUI' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const data = await res.json();
+                    if (res.ok && data.message === 'success') {
+                        feedback.className = 'feedback success';
+                        feedback.textContent = 'Perfil atualizado com sucesso!';
+
+                        // Atualizar dados no sessionStorage
+                        userData.nome = nome;
+                        userData.email = email;
+                        sessionStorage.setItem('user', JSON.stringify(userData));
+                    } else {
+                        feedback.className = 'feedback error';
+                        feedback.textContent = data.error || 'Erro ao atualizar perfil.';
+                    }
+                } catch (err) {
+                    feedback.className = 'feedback error';
+                    feedback.textContent = err.message || 'Erro inesperado.';
+                }
+            });
+
+            // Botão "Atualizar Senha"
+            const btnUpdatePassword = document.querySelector('.btn-update-password');
+            const dialogSenha = document.getElementById('dialog-atualizar-senha');
+            const btnCancelar = dialogSenha.querySelector('.btn-cancelar');
+            const btnConfirmar = dialogSenha.querySelector('.btn-confirmar');
+            const dialogFeedback = document.getElementById('dialogFeedback');
+
+            btnUpdatePassword.addEventListener('click', () => {
+                dialogFeedback.style.display = 'none';
+                dialogFeedback.textContent = '';
+                dialogFeedback.className = 'feedback';
+                document.getElementById('senha_atual_dialog').value = '';
+                document.getElementById('nova_senha_dialog').value = '';
+                dialogSenha.showModal();
+            });
+
+            btnCancelar.addEventListener('click', () => {
+                dialogSenha.close();
+            });
+
+            btnConfirmar.addEventListener('click', async () => {
+                dialogFeedback.style.display = 'block';
+                dialogFeedback.className = 'feedback success';
+                dialogFeedback.textContent = 'Atualizando senha...';
+
+                const senhaAtual = document.getElementById('senha_atual_dialog').value.trim();
+                const novaSenha = document.getElementById('nova_senha_dialog').value.trim();
+
+                const payloadSenha = { senha_atual: senhaAtual, nova_senha: novaSenha };
+
+                try {
+                    const res = await fetch('http://127.0.0.1:3000/api/admin/perfil/senha', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer SEU_TOKEN_AQUI' },
+                        body: JSON.stringify(payloadSenha)
+                    });
+
+                    const data = await res.json();
+                    if (res.ok && data.message === 'success') {
+                        dialogFeedback.className = 'feedback success';
+                        dialogFeedback.textContent = 'Senha atualizada com sucesso!';
+                        setTimeout(() => {
+                            dialogSenha.close();
+                        }, 1500);
+                    } else {
+                        dialogFeedback.className = 'feedback error';
+                        dialogFeedback.textContent = data.error || 'Erro ao atualizar senha.';
+                    }
+                } catch (err) {
+                    dialogFeedback.className = 'feedback error';
+                    dialogFeedback.textContent = err.message || 'Erro inesperado.';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

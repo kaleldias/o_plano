@@ -1,0 +1,198 @@
+/* Resetando padding e margin para todos os elementos */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'k2d';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to top, #6ba9fb93, #fbfdfed0);
+    
+}
+
+.hidde{
+    display: none;
+}
+
+
+
+
+
+.login-box {
+    width: 420px;
+    max-width: 600px;
+    height: 450px;
+    margin-top: 80px !important;
+    padding: 30px;
+    background-image: #ffffff1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    backdrop-filter: blur(10px);
+    margin-top: 3%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.icon-enter {
+    width: 48px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.login-box h1 {
+    font-size: 2.2rem;
+    font-family: 'k2d-bold', sans-serif;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.input-email, .input-password {
+    width: 90%;
+    height: 44px;
+    padding-left: 40px;
+    margin-top: 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #EFF2F6;
+    border: 1px solid #b9babd;
+    font-family: 'k2d-semibold', sans-serif;
+    color: #818998;
+}
+
+input::placeholder {
+    font-family: 'k2d-semibold', sans-serif;
+    font-size: 16px;
+    color: #818998;
+}
+
+.input-email {
+    background-image: url('/img/email.svg');
+    background-size: 20% 13px;
+    background-position: -4% center;
+    background-repeat: no-repeat;
+    padding-left: 11%;
+}
+
+.input-password {
+    background-image: url('/img/cadeado.svg');
+    background-size: 20% 20px;
+    background-position: -4% center;
+    background-repeat: no-repeat;
+    padding-left: 11%;
+}
+
+
+
+.button-entrar {
+    border: none;
+    width: 90%;
+    height: 44px;
+    background: #0E0F1A;
+    color: #FFF;
+    font-family: 'k2d-semibold', sans-serif;
+    border-radius: 8px;
+    margin-top: 40px;
+    font-size: 18px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.button-entrar:hover {
+    transform: scale(1.1);
+}
+
+
+/* Feedback */
+.feedback {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.feedback.success {
+    background-color: #28a745;
+}
+
+.feedback.error {
+    background-color: #dc3545;
+}
+
+
+/* Estilos para responsividade */
+@media screen and (max-width: 768px) {
+    
+    .login-box {
+        padding: 20px;
+        max-width: 400px;
+    }
+
+    .login-box h1 {
+        font-size: 1.8rem;
+    }
+
+    .input-email, .input-password {
+        width: 100%;
+        padding-left: 50px;
+        font-size: 14px;
+    }
+
+    .button-entrar {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-box {
+        padding: 15px;
+        margin-top: 10%;
+    }
+
+    .login-box h1 {
+        font-size: 1.6rem;
+    }
+
+    .input-email, .input-password {
+        width: 100%;
+        padding-left: 50px;
+        font-size: 14px;
+    }
+
+    .button-entrar {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .icon-enter {
+        width: 30%;
+        max-width: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .icon-enter {
+        width: 40%;
+        max-width: 60px;
+    }
+}

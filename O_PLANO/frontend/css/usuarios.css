@@ -1,0 +1,292 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'K2D', sans-serif !important;
+    background: #f5f5f5;
+    color: #333;
+}
+
+#navbar-container {
+    font-family: 'K2D', sans-serif;
+}
+
+
+
+
+/* CONTEÚDO PRINCIPAL E TABELA */
+.admin-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 120px auto;
+}
+
+.admin-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-filter {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.btn-filter {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-filter:hover {
+    background: #555;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 8px 8px 0 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.users-table th,
+.users-table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.users-table th {
+    background: #333;
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+}
+
+.users-table tr:hover td {
+    background: #f9f9f9;
+}
+
+.detail-who {
+    color: #666;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.btn-ver {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-ver:hover {
+    background: #555;
+}
+
+/* DIALOG */
+dialog {
+    margin: 30px auto;
+    border: none;
+    border-radius: 16px;
+    padding: 20px;
+    width: 450px;
+    max-width: 90%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+dialog::backdrop {
+    background: rgba(0,0,0,0.4);
+}
+
+.dialog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dialog-form h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.dialog-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.btn-salvar,
+.btn-remover,
+.btn-fechar {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-salvar {
+    background: #333;
+    color: #fff;
+}
+
+.btn-salvar:hover {
+    background: #555;
+}
+
+.btn-remover {
+    background: #c00;
+    color: #fff;
+}
+
+.btn-remover:hover {
+    background: #a00;
+}
+
+.btn-fechar {
+    background: #ddd;
+    color: #333;
+}
+
+.btn-fechar:hover {
+    background: #bbb;
+}
+
+/* FOOTER */
+.main-footer {
+    background: #fff;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Estilos para responsividade */
+@media screen and (max-width: 768px) {
+    
+    .login-box {
+        padding: 20px;
+        max-width: 400px;
+    }
+
+    .login-box h1 {
+        font-size: 1.8rem;
+    }
+
+    .input-email, .input-password {
+        width: 100%;
+        padding-left: 50px;
+        font-size: 14px;
+    }
+
+    .button-entrar {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-box {
+        padding: 15px;
+        margin-top: 10%;
+    }
+
+    .login-box h1 {
+        font-size: 1.6rem;
+    }
+
+    .input-email, .input-password {
+        width: 100%;
+        padding-left: 50px;
+        font-size: 14px;
+    }
+
+    .button-entrar {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .icon-enter {
+        width: 30%;
+        max-width: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .icon-enter {
+        width: 40%;
+        max-width: 60px;
+    }
+}

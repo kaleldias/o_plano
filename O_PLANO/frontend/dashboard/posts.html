@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O PLANO - Todos os Posts (Super Admin)</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonte: Barlow e K2D -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=K2D:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/posts.css" />
+    <link rel="stylesheet" href="../components/navbar/navbar.css" />
+    <script type="module" src="../js/app.js"></script>
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+    <main class="admin-container">
+        <section class="admin-card">
+            <h1 class="card-title">Super Admin</h1>
+            <h2 class="section-subtitle">Todos os Posts</h2>
+
+            <!-- Grid de Posts -->
+            <div class="posts-grid">
+            </div>
+
+            <!-- Botão de Carregar Mais -->
+            <div class="load-more-container">
+                <button id="btn-load-more" class="btn-carregar-mais">Carregar Mais</button>
+            </div>
+        </section>
+    </main>
+
+    <main class="admin-container">
+        <!-- Elemento de feedback -->
+        <div id="feedback" class="feedback" style="display: none;"></div>
+
+        <section class="admin-card">
+            <h1 class="card-title">Gerenciar Posts</h1>
+            <h2 class="section-subtitle">Todos os Posts</h2>
+
+            <!-- Botão para criar novo post -->
+            <div class="create-post-container">
+                <button id="btn-create-post" class="btn-salvar">Adicionar Novo Post</button>
+            </div>
+
+            <!-- Grid de Posts -->
+            <div class="posts-grid">
+            </div>
+        </section>
+    </main>
+
+    <!-- Dialog para criação/edição do post -->
+    <dialog id="dialog-editar-post">
+        <form method="dialog" class="dialog-form">
+            <h2 id="dialog-title">Novo Post</h2>
+
+            <div class="form-group">
+                <label for="tituloEdicao">Título do Post:</label>
+                <input type="text" id="tituloEdicao" name="tituloEdicao" placeholder="Título do Post" />
+            </div>
+
+            <div class="form-group">
+                <label for="conteudoEdicao">Conteúdo:</label>
+                <textarea id="conteudoEdicao" name="conteudoEdicao" rows="6"
+                    placeholder="Escreva o conteúdo do post..."></textarea>
+            </div>
+
+            <form class="form-group" enctype="multipart/form-data">
+                <label for="imagemPost">Imagem do Post (opcional):</label>
+                <input type="file" id="imagemPost" name="imagemPost" />
+                <div class="image-preview-container">
+                    <img id="imagePreview" alt="Pré-visualização da Imagem"
+                        style="display:none; max-width:100%; border-radius:8px;" />
+                </div>
+            </form>
+
+            <div class="dialog-actions">
+                <button type="button" id="btn-save" class="btn-salvar">Salvar</button>
+                <button type="button" class="btn-fechar" onclick="this.closest('dialog').close()">Fechar</button>
+                <button type="button" class="btn-delete">Deletar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 O Plano - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

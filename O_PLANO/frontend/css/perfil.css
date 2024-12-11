@@ -1,0 +1,221 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'K2D', sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* HEADER */
+.main-header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+.header-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    height: 40px;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-list a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+.nav-list a:hover {
+    background: #e0e0e0;
+}
+a.active {
+    background: #333;
+    color: #fff;
+}
+.header-actions {
+    display: flex;
+    gap: 20px;
+}
+.action-link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+.action-link:hover {
+    background: #e0e0e0;
+}
+
+/* MAIN CONTENT */
+.admin-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+.admin-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    width: 100%;
+}
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+}
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+}
+.form-group input:focus {
+    outline: 2px solid #0a2540;
+}
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+.btn-submit,
+.btn-update-password {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s;
+}
+.btn-submit:hover,
+.btn-update-password:hover {
+    background: #555;
+}
+
+/* FEEDBACK */
+.feedback {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+.feedback.success {
+    background-color: #28a745;
+}
+.feedback.error {
+    background-color: #dc3545;
+}
+
+/* FOOTER */
+.main-footer {
+    background: #fff;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* DIALOG */
+dialog {
+    margin: 20px auto;
+    border: none;
+    border-radius: 16px;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+dialog::backdrop {
+    background: rgba(0,0,0,0.4);
+}
+.dialog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.dialog-form h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.btn-cancelar,
+.btn-confirmar {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.btn-cancelar {
+    background: #ddd;
+    color: #333;
+}
+.btn-cancelar:hover {
+    background: #bbb;
+}
+.btn-confirmar {
+    background: #333;
+    color: #fff;
+}
+.btn-confirmar:hover {
+    background: #555;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+}

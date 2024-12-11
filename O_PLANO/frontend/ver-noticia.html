@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notícia - O Plano</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/ver-noticia.css">
+    <link rel="stylesheet" href="./components/navbar/navbar.css">
+    <link rel="stylesheet" href="./components/loader/loader.css">
+    <script type="module" src="js/app.js"></script>
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="navbar-container" class="active"></div>
+
+    <div class="main-content" class="hidden">
+        <main class="noticia-container">
+            <h1 id="tituloNoticia"></h1>
+            <p class="metadata" id="dataAutor"></p>
+            
+            <img id="imagemNoticia" alt="Imagem da Notícia" class="noticia-imagem" style="display: none;"/>
+            <article id="conteudoNoticia"></article>
+            <div id="feedback" class="feedback" style="display:none;"></div>
+        </main>
+
+        <!-- Rodapé (mesmo padrão da home) -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="img/logo.png" alt="O Plano" class="footer-logo">
+                    <p class="footer-description">O seu portal de notícias independente, trazendo informação, cultura e
+                        conhecimento.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Links Úteis</h3>
+                    <ul class="footer-links">
+                        <li><a href="index-home.html">Home</a></li>
+                        <li><a href="index-register.html">Registro</a></li>
+                        <li><a href="todas_noticias.html">Notícias</a></li>
+                        <li><a href="#">Escreva</a></li>
+                        <li><a href="#">Perfil</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Siga-nos</h3>
+                    <ul class="social-links">
+                        <li><a href="#" class="social-link">Instagram</a></li>
+                        <li><a href="#" class="social-link">Twitter</a></li>
+                        <li><a href="#" class="social-link">Facebook</a></li>
+                        <li><a href="#" class="social-link">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 O PLANO - Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

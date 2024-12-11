@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importando fontes do Google Fonts (mesmas do login e home) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    
+    <!-- CSS específico para esta página -->
+    <link rel="stylesheet" href="css/noticias.css">
+    <link rel="stylesheet" href="./components/navbar/navbar.css">
+    <link rel="stylesheet" href="./components/loader/loader.css" />
+    <script type="module" src="js/app.js"></script>
+
+    <title>O PLANO - Todas as Notícias</title>
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="navbar-container" class="active"></div>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content" class="hidden">
+        <section class="page-header">
+            <h1 class="page-title">Todas as Notícias</h1>
+            <p class="page-subtitle">Confira a lista completa de notícias, artigos e análises disponíveis no O Plano.</p>
+        </section>
+
+        <!-- Container da Lista de Notícias -->
+        <section class="news-list-container">
+            
+            <div class="news-grid">
+                <!-- Cards de Notícia -->
+                
+            </div>
+
+            <!-- Paginação / Botão de "Carregar mais" -->
+            <div class="pagination-container">
+                
+
+                <!-- Botão de Carregar Mais -->
+                <button class="load-more-btn">Carregar mais</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé (mesmo padrão da home) -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="img/logo.png" alt="O Plano" class="footer-logo">
+                <p class="footer-description">O seu portal de notícias independente, trazendo informação, cultura e conhecimento.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3 class="footer-title">Links Úteis</h3>
+                <ul class="footer-links">
+                    <li><a href="index-home.html">Home</a></li>
+                    <li><a href="index-register.html">Registro</a></li>
+                    <li><a href="todas_noticias.html">Notícias</a></li>
+                    <li><a href="#">Escreva</a></li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 class="footer-title">Siga-nos</h3>
+                <ul class="social-links">
+                    <li><a href="#" class="social-link">Instagram</a></li>
+                    <li><a href="#" class="social-link">Twitter</a></li>
+                    <li><a href="#" class="social-link">Facebook</a></li>
+                    <li><a href="#" class="social-link">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 O PLANO - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    
+         
+</body>
+</html>

@@ -1,0 +1,47 @@
+/* loader.css */
+
+
+
+/* Centralizar o loader na página */
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo opcional */
+     /* Garante que o loader fique sobre outros elementos */
+}
+
+.spinner {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    animation: spinner-plncf9 4s infinite;
+    z-index: 100;
+}
+
+.spinner::before,
+.spinner::after {
+    content: "";
+    grid-area: 1/1;
+    border: 5px solid;
+    border-radius: 50%;
+    border-color: #333333 #333333 #0000 #0000;
+    mix-blend-mode: darken;
+    animation: spinner-plncf9 1s infinite linear;
+}
+
+.spinner::after {
+    border-color: #0000 #0000 #dbdcef #dbdcef;
+    animation-direction: reverse;
+}
+
+@keyframes spinner-plncf9 {
+    100% {
+       transform: rotate(1turn);
+    }
+}

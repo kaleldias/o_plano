@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O PLANO - Pré-Cadastro de Admin (Super Admin)</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=K2D:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/autorizacao.css" />
+    <link rel="stylesheet" href="../components/navbar/navbar.css" />
+    <script type="module" src="../js/app.js"></script>
+</head>
+
+<body>
+   <!-- Loader -->
+   <div id="loader"></div>
+
+
+   <div id="navbar-container"></div>
+
+    <main class="admin-container">
+        <section class="admin-card">
+            <h1 class="card-title">Super Admin</h1>
+
+            <div class="add-email-section">
+                <h2>Adicionar E-mail Autorizado</h2>
+                <div class="add-email-form">
+                    <input type="email" placeholder="Digite o e-mail" class="input-email" id="newEmailAuth" />
+                    <button class="btn-add-email">Adicionar E-mail</button>
+                </div>
+            </div>
+
+            <h2 class="section-subtitle">E-mails Autorizados:</h2>
+            <div class="table-responsive">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>E-mail</th>
+                            <th>Status</th>
+                            <th>Data Criação</th>
+                            <th>Última Atualização</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-user-id="1">
+                            <td>joao@exemplo.com</td>
+                            <td>Ativo</td>
+                            <td>01/12/2024 às 14:20 <br> <span class="detail-who">Por: Super Admin</span></td>
+                            <td>Sem atualizações</td>
+                            <td><button class="btn-ver" data-user-id="1">Ver</button></td>
+                        </tr>
+                        <tr data-user-id="2">
+                            <td>mariaf@exemplo.com</td>
+                            <td>Inativo</td>
+                            <td>08/12/2024 às 09:00 <br> <span class="detail-who">Por: Kal-EL Dias</span></td>
+                            <td>09/12/2024 às 19:53 <br> <span class="detail-who">Por: Super Admin</span></td>
+                            <td><button class="btn-ver" data-user-id="2">Ver</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Dialog para ver/editar usuário -->
+    <dialog id="dialog-ver-usuario">
+        <form method="dialog" class="dialog-form">
+            <h2>Edição do Usuário</h2>
+            <p><strong>ID:</strong> <span id="dialogUserId"></span></p>
+
+            <div class="form-group">
+                <label for="emailEdicao">E-mail:</label>
+                <input type="email" id="emailEdicao" name="emailEdicao" placeholder="Editar e-mail" />
+            </div>
+
+            <div class="form-group">
+                <label for="statusEdicao">Status:</label>
+                <select id="statusEdicao" name="statusEdicao">
+                    <option value="Ativo">Ativo</option>
+                    <option value="Inativo">Inativo</option>
+                </select>
+            </div>
+
+            <div class="dialog-actions">
+                <button type="button" class="btn-remover">Remover</button>
+                <button type="button" class="btn-salvar">Salvar</button>
+                <button type="submit" class="btn-fechar">Fechar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 O Plano - Área Administrativa.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dialog = document.getElementById('dialog-ver-usuario');
+            const btnVerList = document.querySelectorAll('.btn-ver');
+            const dialogUserIdField = document.getElementById('dialogUserId');
+            const emailEdicao = document.getElementById('emailEdicao');
+            const statusEdicao = document.getElementById('statusEdicao');
+
+            btnVerList.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const userId = btn.getAttribute('data-user-id');
+                    // Aqui você pode fazer um fetch para o backend, passando o userId, e preencher os campos.
+                    // Exemplo estático:
+                    dialogUserIdField.textContent = userId;
+                    emailEdicao.value = userId === "1" ? "joao@exemplo.com" : "mariaf@exemplo.com";
+                    statusEdicao.value = userId === "1" ? "Ativo" : "Inativo";
+
+                    dialog.showModal();
+                });
+            });
+
+            // Botões internos do dialog
+            const btnSalvar = dialog.querySelector('.btn-salvar');
+            btnSalvar.addEventListener('click', () => {
+                const updatedEmail = emailEdicao.value;
+                const updatedStatus = statusEdicao.value;
+                const userId = dialogUserIdField.textContent;
+
+                // Fazer request para o backend atualizando as informações do userId
+                // fetch('/api/updateUser', { method: 'POST', body: JSON.stringify({id: userId, email: updatedEmail, status: updatedStatus}) ...})
+
+                alert('Usuário atualizado com sucesso!');
+            });
+
+            const btnRemover = dialog.querySelector('.btn-remover');
+            btnRemover.addEventListener('click', () => {
+                const userId = dialogUserIdField.textContent;
+                // Request para remover o usuário autorizado
+                // fetch('/api/removeUser?id=' + userId, {method:'POST'...})
+                alert('Usuário removido!');
+            });
+        });
+    </script>
+</body>
+
+</html>
